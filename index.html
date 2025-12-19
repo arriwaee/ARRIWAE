@@ -146,6 +146,11 @@
         0%, 50% { opacity: 1; }
         51%, 100% { opacity: 0; }
       }
+
+      /* Smooth scrolling offset for fixed navbar */
+      section {
+        scroll-margin-top: 5rem;
+      }
     </style>
   </head>
   <body class="bg-slate-50 text-slate-900 overflow-x-hidden">
@@ -458,13 +463,13 @@
       </svg>
     </section>
 
-   <section class="max-w-3xl mx-auto py-12 px-4">
+   <section id="experience" class="max-w-3xl mx-auto py-12 px-4">
 
-    <!-- Header -->
-    <div class="mb-12">
-    <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
-      PENGALAMAN PROFESIONAL
-    </h2>
+     <!-- Header -->
+     <div class="mb-12">
+     <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
+       PROFESSIONAL EXPERIENCE
+     </h2>
     <div class="h-1.5 w-20 bg-gradient-to-r from-[#00b9e8] to-[#f72585] rounded-full mt-3"></div>
   </div>
 
@@ -518,15 +523,15 @@
                 <ul class="space-y-3 text-slate-600 text-sm leading-relaxed">
                     <li class="flex gap-3">
                         <span class="text-[#f72585]">•</span>
-                        <span>Mengembangkan dan memperbaiki antarmuka website internal.</span>
+                        <span>Developing and improving internal website interfaces.</span>
                     </li>
                     <li class="flex gap-3">
                         <span class="text-[#f72585]">•</span>
-                        <span>Menerapkan desain responsif agar optimal di berbagai perangkat.</span>
+                        <span>Implementing responsive design for optimal performance across various devices.</span>
                     </li>
                     <li class="flex gap-3">
                         <span class="text-[#f72585]">•</span>
-                        <span>Berkolaborasi dengan tim untuk meningkatkan UI/UX dan konsistensi desain.</span>
+                        <span>Collaborating with the team to enhance UI/UX and design consistency.</span>
                     </li>
                 </ul>
 
@@ -579,15 +584,15 @@
                 <ul class="space-y-3 text-slate-600 text-sm leading-relaxed">
                     <li class="flex gap-3">
                         <span class="text-[#f72585]">•</span>
-                        <span>Mengembangkan logika back-end dan pengolahan data aplikasi internal.</span>
+                        <span>Developing back-end logic and data processing for internal applications.</span>
                     </li>
                     <li class="flex gap-3">
                         <span class="text-[#f72585]">•</span>
-                        <span>Mengintegrasikan database untuk sistem informasi kebencanaan.</span>
+                        <span>Integrating databases for disaster information systems.</span>
                     </li>
                     <li class="flex gap-3">
                         <span class="text-[#f72585]">•</span>
-                        <span>Mendukung perbaikan API agar sistem lebih stabil dan efisien.</span>
+                        <span>Supporting API improvements to make the system more stable and efficient.</span>
                     </li>
                 </ul>
 
@@ -604,13 +609,13 @@
 
 
 <!-- Education History Section Start -->
-<section class="max-w-3xl mx-auto py-12 px-4 mt-8">
+<section id="education" class="max-w-3xl mx-auto py-12 px-4 mt-8">
 
-    <!-- Header -->
-    <div class="mb-12">
-    <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
-      RIWAYAT PENDIDIKAN
-    </h2>
+     <!-- Header -->
+     <div class="mb-12">
+     <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
+       EDUCATION HISTORY
+     </h2>
     <div class="h-1.5 w-20 bg-gradient-to-r from-[#00b9e8] to-[#f72585] rounded-full mt-3"></div>
   </div>
 
@@ -650,7 +655,7 @@
                 <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4 gap-2">
                     <div>
                         <h3 class="text-xl font-bold text-slate-900">
-                            S1 Informatika
+                            Bachelor of Informatics
                         </h3>
                         <p class="text-[#00b9e8] font-semibold text-sm uppercase tracking-wider">
                             Universitas Teknologi Digital Indonesia
@@ -663,16 +668,16 @@
 
                 <div class="space-y-3 text-slate-600 text-sm leading-relaxed">
                     <p>
-                        <span class="font-semibold text-slate-900">IPK Saat Ini:</span> 3.65 / 4.00
+                        <span class="font-semibold text-slate-900">Current GPA:</span> 3.65 / 4.00
                     </p>
                     <ul class="space-y-2">
                         <li class="flex gap-3">
                             <span class="text-[#f72585]">•</span>
-                            <span>Fokus pada pengembangan web, baik Front-End maupun Back-End.</span>
+                            <span>Focus on web development, both Front-End and Back-End.</span>
                         </li>
                         <li class="flex gap-3">
                             <span class="text-[#f72585]">•</span>
-                            <span>Mengerjakan berbagai project akademik dan mandiri berbasis web.</span>
+                            <span>Working on various academic and independent web-based projects.</span>
                         </li>
                     </ul>
                 </div>
@@ -717,7 +722,7 @@
                             SMA Negeri 1 Jogonalan
                         </h3>
                         <p class="text-[#00b9e8] font-semibold text-sm uppercase tracking-wider">
-                            Jurusan IPS
+                            Social Studies Major
                         </p>
                     </div>
                     <span class="text-xs font-bold bg-[#00b9e8]/10 text-[#00b9e8] px-3 py-1 rounded-full uppercase w-fit">
@@ -726,7 +731,7 @@
                 </div>
 
                 <p class="text-slate-600 text-sm italic">
-                    Lulus dengan baik dan memiliki dasar pemahaman sosial, ekonomi, dan analisis data sederhana.
+                    Graduated with good grades and has a basic understanding of social, economic, and simple data analysis.
                 </p>
             </div>
         </div>
@@ -736,12 +741,12 @@
 
 
 <!-- Technical Skills Section Start -->
-<section class="max-w-3xl mx-auto py-12 px-4 mt-8">
+<section id="skills" class="max-w-3xl mx-auto py-12 px-4 mt-8">
 
-  <div class="mb-12">
-    <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
-      KEAHLIAN TEKNIS
-    </h2>
+   <div class="mb-12">
+     <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
+       TECHNICAL SKILLS
+     </h2>
     <div class="h-1.5 w-20 bg-gradient-to-r from-[#00b9e8] to-[#f72585] rounded-full mt-3"></div>
   </div>
 
@@ -836,13 +841,13 @@
 </section>
 <!-- Technical Skills Section End -->
 
-<section class="max-w-3xl mx-auto py-12 px-4 mt-8">
+<section id="projects" class="max-w-3xl mx-auto py-12 px-4 mt-8">
 
-  <!-- ================= PROJEK ================= -->
-  <div class="mb-12">
-    <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
-      Daftar Projek
-    </h2>
+   <!-- ================= PROJEK ================= -->
+   <div class="mb-12">
+     <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
+       Project List
+     </h2>
     <div class="h-1.5 w-20 bg-gradient-to-r from-[#00b9e8] to-[#f72585] rounded-full mt-3"></div>
   </div>
 
@@ -859,7 +864,7 @@
           Website KRS JAWA III
         </h3>
         <p class="text-sm text-slate-500 mt-2">
-          website sistem infromasi mengenai progam kerja PUPR DIY.
+          Website for information system regarding PUPR DIY work programs.
         </p>
       </div>
     </div>
@@ -875,7 +880,7 @@
           Website CV Mandiri Putra
         </h3>
         <p class="text-sm text-slate-500 mt-2">
-          Website serta progam CRUD untuk CV Mandiri Putra
+          Website and CRUD program for CV Mandiri Putra
         </p>
       </div>
     </div>
@@ -891,7 +896,7 @@
           Aplikasi Pembuatan Nota
         </h3>
         <p class="text-sm text-slate-500 mt-2">
-          Aplikasi untuk pembuatan nota untuk cv mandiri putra
+          Application for creating notes for cv mandiri putra
         </p>
       </div>
     </div>
@@ -907,7 +912,7 @@
           Aplikasi To Do List
         </h3>
         <p class="text-sm text-slate-500 mt-2">
-          Aplikasi untuk membuat daftar tugas
+          Application for creating task lists
         </p>
       </div>
     </div>
@@ -923,7 +928,7 @@
           Website destinasi wisata umbul di klaten
         </h3>
         <p class="text-sm text-slate-500 mt-2">
-          Website destinasi wisata umbul di klaten
+          Website for Umbul tourism destination in Klaten
         </p>
       </div>
     </div>
@@ -933,7 +938,7 @@
   <!-- ================= SERTIFIKAT ================= -->
   <div class="mb-12">
     <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
-      Daftar Sertifikat
+      Certificate List
     </h2>
     <div class="h-1.5 w-20 bg-gradient-to-r from-[#00b9e8] to-[#f72585] rounded-full mt-3"></div>
   </div>
@@ -948,7 +953,7 @@
       </div>
       <div class="p-6">
         <h3 class="text-lg font-bold text-slate-900">
-          Sertifikat API introduction
+          API Introduction Certificate
         </h3>
         <p class="text-sm text-slate-500 mt-2">
           Myskill • 2025
@@ -964,7 +969,7 @@
       </div>
       <div class="p-6">
         <h3 class="text-lg font-bold text-slate-900">
-          Sertifikat Back-End Developer
+          Back-End Developer Certificate
         </h3>
         <p class="text-sm text-slate-500 mt-2">
           Myskill • 2025
@@ -980,7 +985,7 @@
       </div>
       <div class="p-6">
         <h3 class="text-lg font-bold text-slate-900">
-          Sertifikat Front-End Developer
+          Front-End Developer Certificate
         </h3>
         <p class="text-sm text-slate-500 mt-2">
           Myskill • 2025
@@ -996,7 +1001,7 @@
       </div>
       <div class="p-6">
         <h3 class="text-lg font-bold text-slate-900">
-          Sertifikat Internet Introduction
+          Internet Introduction Certificate
         </h3>
         <p class="text-sm text-slate-500 mt-2">
           Myskill • 2025
@@ -1012,7 +1017,7 @@
       </div>
       <div class="p-6">
         <h3 class="text-lg font-bold text-slate-900">
-          Sertifikat Responsive Web Design
+          Responsive Web Design Certificate
         </h3>
         <p class="text-sm text-slate-500 mt-2">
           Myskill • 2025
@@ -1028,7 +1033,7 @@
       </div>
       <div class="p-6">
         <h3 class="text-lg font-bold text-slate-900">
-          Sertifikat magang
+          Internship Certificate
         </h3>
         <p class="text-sm text-slate-500 mt-2">
           PUPR DIY • 2025
@@ -1044,13 +1049,13 @@
 
 
 <!-- Contact Me Section Start -->
-<section class="max-w-3xl mx-auto py-12 px-4 mt-8 text-center">
-    
-    <!-- Header -->
-    <div class="mb-12">
-        <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
-            Hubungi Saya
-        </h2>
+<section id="contact" class="max-w-3xl mx-auto py-12 px-4 mt-8 text-center">
+
+     <!-- Header -->
+     <div class="mb-12">
+         <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
+             Contact Me
+         </h2>
         <div class="h-1.5 w-20 bg-gradient-to-r from-[#00b9e8] to-[#f72585] rounded-full mt-3 mx-auto"></div>
     </div>
 
