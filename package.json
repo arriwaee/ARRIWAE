@@ -1,0 +1,11 @@
+{
+  "name": "ari-purnomo-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio website for Ari Purnomo",
+  "scripts": {
+    "build-css": "tailwindcss -i ./input.css -o ./styles.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}

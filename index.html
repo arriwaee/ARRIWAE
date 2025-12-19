@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>ARRIWAE</title>
+
+    <!-- Favicon (ikon tab browser) -->
+    <link rel="icon" type="image/png" href="A2-removebg-preview.png" />
+
+    <!-- Preview saat dibagikan (Open Graph) -->
+    <meta property="og:title" content="ARRIWAE – Front-End Developer" />
+    <meta property="og:description" content="Portfolio Front-End Developer dengan desain modern dan responsif." />
+    <meta property="og:image" content="preview.png" />
+    <meta property="og:type" content="website" />
+
+    <!-- PWA -->
+    <meta name="theme-color" content="#00B9E8" />
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap");
+
+      body {
+        font-family: "Inter", sans-serif;
+      }
+
+      @keyframes shake {
+        0% {
+          transform: translateX(0);
+        }
+        25% {
+          transform: translateX(-5px);
+        }
+        50% {
+          transform: translateX(5px);
+        }
+        75% {
+          transform: translateX(-5px);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes swing {
+        0% {
+          transform: rotate(-1.5deg);
+          transform-origin: top center;
+        }
+        100% {
+          transform: rotate(1.5deg);
+          transform-origin: top center;
+        }
+      }
+
+      /* --- Animated Waves CSS --- */
+      .waves {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 80px;
+        min-height: 60px;
+        max-height: 100px;
+      }
+
+      .parallax > use {
+        animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+      }
+      .parallax > use:nth-child(1) {
+        animation-delay: -2s;
+        animation-duration: 7s;
+      }
+      .parallax > use:nth-child(2) {
+        animation-delay: -3s;
+        animation-duration: 10s;
+      }
+      .parallax > use:nth-child(3) {
+        animation-delay: -4s;
+        animation-duration: 13s;
+      }
+      .parallax > use:nth-child(4) {
+        animation-delay: -5s;
+        animation-duration: 20s;
+      }
+
+      @keyframes move-forever {
+        0% {
+          transform: translate3d(-90px, 0, 0);
+        }
+        100% {
+          transform: translate3d(85px, 0, 0);
+        }
+      }
+      /* --------------------------- */
+
+      .letter {
+          display: inline-block;
+          transition: color 0.3s, transform 0.3s;
+          cursor: default;
+          color: white;
+      }
+
+      .letter:hover {
+          animation: shake 0.5s ease-in-out;
+          color: #00b9e8;
+      }
+
+      .glass-card {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .section-gradient {
+        background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      }
+
+      .skill-pill {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .skill-pill:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px -3px rgba(0, 185, 232, 0.3);
+      }
+
+      .hanging-id-card {
+        animation: swing 3s ease-in-out infinite alternate;
+      }
+
+      .lanyard-strap {
+        background: linear-gradient(to bottom, #00b9e8, #0087a8);
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .cursor {
+        border-right: 2px solid #00B9E8;
+        animation: blink 1s infinite;
+      }
+
+      @keyframes blink {
+        0%, 50% { opacity: 1; }
+        51%, 100% { opacity: 0; }
+      }
+    </style>
+  </head>
+  <body class="bg-slate-50 text-slate-900 overflow-x-hidden">
+    <!-- Header -->
+    <header
+      class="bg-white/10 backdrop-blur-xl shadow-lg border-b border-white/20 fixed w-full top-0 z-50 transition-all duration-300"
+    >
+      <nav
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <h1 class="text-2xl font-extrabold tracking-tighter text-[#00B9E8]">
+          ARI<span style="color:#f72585;">PURNOMO</span>
+
+        </h1>
+
+        <ul class="hidden md:flex space-x-10 font-medium">
+          <li>
+            <a
+              href="#about"
+              class="text-slate-600 hover:text-[#00B9E8] transition-colors"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="#experience"
+              class="text-slate-600 hover:text-[#00B9E8] transition-colors"
+              >Experience</a
+            >
+          </li>
+          <li>
+            <a
+              href="#education"
+              class="text-slate-600 hover:text-[#00B9E8] transition-colors"
+              >Education</a
+            >
+          </li>
+          <li>
+            <a
+              href="#skills"
+              class="text-slate-600 hover:text-[#00B9E8] transition-colors"
+              >Skills</a
+            >
+          </li>
+          <li>
+            <a
+              href="#projects"
+              class="text-slate-600 hover:text-[#00B9E8] transition-colors"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="text-slate-600 hover:text-[#00B9E8] transition-colors"
+              >Contact</a
+            >
+          </li>
+        </ul>
+
+        <div class="md:hidden">
+          <button
+            id="menu-btn"
+            class="text-slate-800 p-2 focus:outline-none"
+            aria-label="Toggle Menu"
+          >
+            <svg
+              class="w-7 h-7"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                id="menu-icon"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white border-t border-slate-100 animate-in slide-in-from-top duration-300"
+      >
+        <ul class="px-6 py-6 space-y-4 font-medium">
+          <li>
+            <a
+              href="#about"
+              class="block text-slate-700 hover:text-[#00B9E8] py-2"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="#experience"
+              class="block text-slate-700 hover:text-[#00B9E8] py-2"
+              >Experience</a
+            >
+          </li>
+          <li>
+            <a
+              href="#education"
+              class="block text-slate-700 hover:text-[#00B9E8] py-2"
+              >Education</a
+            >
+          </li>
+          <li>
+            <a
+              href="#skills"
+              class="block text-slate-700 hover:text-[#00B9E8] py-2"
+              >Skills</a
+            >
+          </li>
+          <li>
+            <a
+              href="#projects"
+              class="block text-slate-700 hover:text-[#00B9E8] py-2"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="block text-slate-700 hover:text-[#00B9E8] py-2"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      id="about"
+      class="min-h-screen flex items-center relative overflow-hidden pt-20"
+      style="
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url('Baixar código-fonte do desktop e papel de parede por codificação e programação_ gratuitamente.jpg');
+        background-size: cover;
+        background-position: center;
+      "
+    >
+      <div
+        class="container mx-auto px-6 flex flex-col md:flex-row items-center relative z-10 pb-20"
+      >
+        <div class="md:w-3/5 text-center md:text-left">
+          <h2
+            id="hero-name"
+            class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight text-white"
+          ></h2>
+          <div
+            class="inline-block bg-[#00B9E8] px-4 py-1 rounded text-sm font-bold tracking-widest uppercase mb-6 text-white"
+          >
+            Front-end Developer
+          </div>
+          <p
+            class="text-lg md:text-xl mb-10 text-slate-200 max-w-2xl leading-relaxed"
+          >
+            Passionate front-end developer creating beautiful and responsive
+            user interfaces. Expert in modern web technologies, UI/UX design,
+            and delivering exceptional user experiences.
+          </p>
+          <div
+            class="flex flex-col sm:flex-row justify-center md:justify-start gap-4"
+          >
+            <a
+              href="#contact"
+              class="bg-white text-[#00B9E8] px-8 py-4 rounded-xl font-bold hover:bg-slate-100 transition shadow-xl hover:shadow-2xl flex items-center justify-center"
+              >Get In Touch</a
+            >
+            <a
+              href="CV_ARI PURNOMO.pdf"
+              download
+              class="bg-[#00B9E8] text-white px-8 py-4 rounded-xl font-bold hover:bg-[#FF1DCE] transition shadow-xl hover:shadow-2xl flex items-center justify-center"
+              >Download CV</a
+            >
+          </div>
+        </div>
+
+        <!-- Profile ID Card Section -->
+        <div class="md:w-2/5 flex justify-center mt-20 md:mt-0 relative">
+          <div class="hanging-id-card relative flex flex-col items-center">
+            <div
+              class="absolute -top-[200px] md:-top-[400px] flex justify-center w-full hidden md:flex"
+            >
+              <div
+                class="lanyard-strap w-2 h-[220px] md:h-[420px] origin-bottom rotate-[10deg] rounded-full translate-x-4"
+              ></div>
+              <div
+                class="lanyard-strap w-2 h-[220px] md:h-[420px] origin-bottom -rotate-[10deg] rounded-full -translate-x-4"
+              ></div>
+            </div>
+            <div
+              class="w-8 h-8 md:w-10 md:h-10 bg-slate-300 rounded-lg shadow-md border border-slate-400 z-30 mb-[-8px] md:mb-[-10px] flex items-center justify-center"
+            >
+              <div
+                class="w-3 h-3 md:w-4 md:h-4 bg-slate-500 rounded-full shadow-inner"
+              ></div>
+            </div>
+            <div
+              class="w-48 h-[280px] md:w-64 md:h-[380px] bg-white rounded-2xl shadow-2xl border-t-[8px] md:border-t-[12px] border-[#00B9E8] p-3 md:p-5 flex flex-col items-center relative overflow-hidden z-20"
+            >
+              <div
+                class="w-12 h-2.5 bg-slate-100 rounded-full mb-6 border border-slate-200"
+              ></div>
+              <div
+                class="w-40 h-40 bg-slate-800 rounded-xl flex items-center justify-center text-slate-500 border-4 border-slate-50 shadow-inner relative overflow-hidden group"
+              >
+                <img
+                  src="saya.jpeg"
+                  alt="Ari Purnomo"
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  onerror="this.src='https://via.placeholder.com/150'"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-2 text-[10px] text-white font-bold uppercase tracking-tighter"
+                >
+                  Ari Purnomo
+                </div>
+              </div>
+              <div class="text-center mt-6">
+                <h4
+                  class="text-xl font-black text-slate-800 tracking-tight leading-none"
+                >
+                  ARI PURNOMO
+                </h4>
+                <p
+                  class="text-[#00B9E8] font-bold text-xs uppercase tracking-[0.2em] mt-2 italic"
+                >
+                  Front-end Developer
+                </p>
+              </div>
+              <div
+                class="mt-auto w-full flex items-center justify-between border-t border-slate-100 pt-4"
+              >
+                <div
+                  class="w-10 h-8 bg-amber-100 rounded border border-amber-200 opacity-50 relative overflow-hidden"
+                >
+                  <div
+                    class="absolute inset-1 border-t border-amber-300/50"
+                  ></div>
+                  <div
+                    class="absolute inset-2 border-t border-amber-300/50"
+                  ></div>
+                </div>
+                <div class="flex gap-0.5 items-end opacity-20">
+                  <div class="w-0.5 h-6 bg-black"></div>
+                  <div class="w-1 h-6 bg-black"></div>
+                  <div class="w-0.5 h-6 bg-black"></div>
+                  <div class="w-1.5 h-6 bg-black"></div>
+                  <div class="w-0.5 h-6 bg-black"></div>
+                  <div class="w-1 h-6 bg-black"></div>
+                </div>
+              </div>
+              <div
+                class="absolute inset-0 pointer-events-none bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-30"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        
+          </div>
+        </div>
+      </div>
+  </div>
+
+      <!-- Animated Ocean Waves Section -->
+      <svg
+        class="waves"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28"
+        preserveAspectRatio="none"
+        shape-rendering="auto"
+      >
+        <defs>
+          <path
+            id="gentle-wave"
+            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+          />
+        </defs>
+        <g class="parallax">
+          <!-- Colors match the next section's background (#f8fafc) -->
+          <use
+            xlink:href="#gentle-wave"
+            x="48"
+            y="0"
+            fill="rgba(248, 250, 252, 0.7)"
+          />
+          <use
+            xlink:href="#gentle-wave"
+            x="48"
+            y="3"
+            fill="rgba(248, 250, 252, 0.5)"
+          />
+          <use
+            xlink:href="#gentle-wave"
+            x="48"
+            y="5"
+            fill="rgba(248, 250, 252, 0.3)"
+          />
+          <use xlink:href="#gentle-wave" x="48" y="7" fill="#f8fafc" />
+        </g>
+      </svg>
+    </section>
+
+   <section class="max-w-3xl mx-auto py-12 px-4">
+
+    <!-- Header -->
+    <div class="mb-12">
+    <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
+      PENGALAMAN PROFESIONAL
+    </h2>
+    <div class="h-1.5 w-20 bg-gradient-to-r from-[#00b9e8] to-[#f72585] rounded-full mt-3"></div>
+  </div>
+
+    <!-- Timeline -->
+    <div class="relative space-y-12
+        before:absolute before:inset-0
+        before:ml-5 before:-translate-x-px
+        before:h-full before:w-0.5
+        before:bg-gradient-to-b
+        before:from-[#00b9e8]
+        before:via-[#f72585]
+        before:to-transparent">
+
+        <!-- MAGANG 1 - FE -->
+        <div class="relative flex items-start group">
+
+            <!-- Dot -->
+            <div class="absolute left-0 flex items-center justify-center
+                w-11 h-11
+                bg-[#00b9e8]/10
+                rounded-full
+                border-4 border-white
+                shadow-sm
+                text-[#00b9e8]
+                group-hover:bg-[#f72585]
+                group-hover:text-white
+                transition-all z-10">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9.75 17L15 12l-5.25-5" />
+                </svg>
+            </div>
+
+            <!-- Card -->
+            <div class="ml-16 bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition w-full">
+                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4 gap-2">
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">
+                            Front-End Developer (Intern)
+                        </h3>
+                        <p class="text-[#00b9e8] font-semibold text-sm uppercase tracking-wider">
+                            PUPR DIY
+                        </p>
+                    </div>
+                    <span class="text-xs font-bold bg-[#00b9e8]/10 text-[#00b9e8] px-3 py-1 rounded-full uppercase w-fit">
+                        Nov 2024 — Feb 2025
+                    </span>
+                </div>
+
+                <ul class="space-y-3 text-slate-600 text-sm leading-relaxed">
+                    <li class="flex gap-3">
+                        <span class="text-[#f72585]">•</span>
+                        <span>Mengembangkan dan memperbaiki antarmuka website internal.</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="text-[#f72585]">•</span>
+                        <span>Menerapkan desain responsif agar optimal di berbagai perangkat.</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="text-[#f72585]">•</span>
+                        <span>Berkolaborasi dengan tim untuk meningkatkan UI/UX dan konsistensi desain.</span>
+                    </li>
+                </ul>
+
+                <div class="mt-5 flex flex-wrap gap-2">
+                    <span class="px-2 py-1 bg-[#f72585]/10 text-[#f72585] rounded text-[10px] font-bold uppercase">HTML</span>
+                    <span class="px-2 py-1 bg-[#f72585]/10 text-[#f72585] rounded text-[10px] font-bold uppercase">CSS</span>
+                    <span class="px-2 py-1 bg-[#f72585]/10 text-[#f72585] rounded text-[10px] font-bold uppercase">JavaScript</span>
+                    <span class="px-2 py-1 bg-[#f72585]/10 text-[#f72585] rounded text-[10px] font-bold uppercase">UI/UX</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAGANG 2 - BE -->
+        <div class="relative flex items-start group">
+
+            <!-- Dot -->
+            <div class="absolute left-0 flex items-center justify-center
+                w-11 h-11
+                bg-[#00b9e8]/10
+                rounded-full
+                border-4 border-white
+                shadow-sm
+                text-[#00b9e8]
+                group-hover:bg-[#f72585]
+                group-hover:text-white
+                transition-all z-10">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 8v4l3 3" />
+                </svg>
+            </div>
+
+            <!-- Card -->
+            <div class="ml-16 bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition w-full">
+                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4 gap-2">
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">
+                            Back-End Developer (Intern)
+                        </h3>
+                        <p class="text-[#00b9e8] font-semibold text-sm uppercase tracking-wider">
+                            BPBD DIY
+                        </p>
+                    </div>
+                    <span class="text-xs font-bold bg-[#00b9e8]/10 text-[#00b9e8] px-3 py-1 rounded-full uppercase w-fit">
+                        Okt 2025 — Jan 2026
+                    </span>
+                </div>
+
+                <ul class="space-y-3 text-slate-600 text-sm leading-relaxed">
+                    <li class="flex gap-3">
+                        <span class="text-[#f72585]">•</span>
+                        <span>Mengembangkan logika back-end dan pengolahan data aplikasi internal.</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="text-[#f72585]">•</span>
+                        <span>Mengintegrasikan database untuk sistem informasi kebencanaan.</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="text-[#f72585]">•</span>
+                        <span>Mendukung perbaikan API agar sistem lebih stabil dan efisien.</span>
+                    </li>
+                </ul>
+
+                <div class="mt-5 flex flex-wrap gap-2">
+                    <span class="px-2 py-1 bg-[#f72585]/10 text-[#f72585] rounded text-[10px] font-bold uppercase">Back-End</span>
+                    <span class="px-2 py-1 bg-[#f72585]/10 text-[#f72585] rounded text-[10px] font-bold uppercase">Database</span>
+                    <span class="px-2 py-1 bg-[#f72585]/10 text-[#f72585] rounded text-[10px] font-bold uppercase">API</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- Education History Section Start -->
+<section class="max-w-3xl mx-auto py-12 px-4 mt-8">
+
+    <!-- Header -->
+    <div class="mb-12">
+    <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
+      RIWAYAT PENDIDIKAN
+    </h2>
+    <div class="h-1.5 w-20 bg-gradient-to-r from-[#00b9e8] to-[#f72585] rounded-full mt-3"></div>
+  </div>
+
+    <!-- Timeline -->
+    <div class="relative space-y-12
+        before:absolute before:inset-0
+        before:ml-5 before:-translate-x-px
+        before:h-full before:w-0.5
+        before:bg-gradient-to-b
+        before:from-[#00b9e8]
+        before:via-[#f72585]
+        before:to-transparent">
+
+        <!-- KULIAH -->
+        <div class="relative flex items-start group">
+
+            <!-- Dot -->
+            <div class="absolute left-0 flex items-center justify-center
+                w-11 h-11
+                bg-[#00b9e8]/10
+                rounded-full
+                border-4 border-white
+                shadow-sm
+                text-[#00b9e8]
+                group-hover:bg-[#f72585]
+                group-hover:text-white
+                transition-all z-10">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                    <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                </svg>
+            </div>
+
+            <!-- Card -->
+            <div class="ml-16 bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition w-full">
+                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4 gap-2">
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">
+                            S1 Informatika
+                        </h3>
+                        <p class="text-[#00b9e8] font-semibold text-sm uppercase tracking-wider">
+                            Universitas Teknologi Digital Indonesia
+                        </p>
+                    </div>
+                    <span class="text-xs font-bold bg-[#00b9e8]/10 text-[#00b9e8] px-3 py-1 rounded-full uppercase w-fit">
+                        2022 — Sekarang
+                    </span>
+                </div>
+
+                <div class="space-y-3 text-slate-600 text-sm leading-relaxed">
+                    <p>
+                        <span class="font-semibold text-slate-900">IPK Saat Ini:</span> 3.65 / 4.00
+                    </p>
+                    <ul class="space-y-2">
+                        <li class="flex gap-3">
+                            <span class="text-[#f72585]">•</span>
+                            <span>Fokus pada pengembangan web, baik Front-End maupun Back-End.</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-[#f72585]">•</span>
+                            <span>Mengerjakan berbagai project akademik dan mandiri berbasis web.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mt-5 flex flex-wrap gap-2">
+                    <span class="px-2 py-1 bg-[#f72585]/10 text-[#f72585] rounded text-[10px] font-bold uppercase">
+                        Web Development
+                    </span>
+                    <span class="px-2 py-1 bg-[#f72585]/10 text-[#f72585] rounded text-[10px] font-bold uppercase">
+                        Informatics
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SMA -->
+        <div class="relative flex items-start group">
+
+            <!-- Dot -->
+            <div class="absolute left-0 flex items-center justify-center
+                w-11 h-11
+                bg-[#00b9e8]/10
+                rounded-full
+                border-4 border-white
+                shadow-sm
+                text-[#00b9e8]
+                group-hover:bg-[#f72585]
+                group-hover:text-white
+                transition-all z-10">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+            </div>
+
+            <!-- Card -->
+            <div class="ml-16 bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition w-full">
+                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4 gap-2">
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">
+                            SMA Negeri 1 Jogonalan
+                        </h3>
+                        <p class="text-[#00b9e8] font-semibold text-sm uppercase tracking-wider">
+                            Jurusan IPS
+                        </p>
+                    </div>
+                    <span class="text-xs font-bold bg-[#00b9e8]/10 text-[#00b9e8] px-3 py-1 rounded-full uppercase w-fit">
+                        2019 — 2022
+                    </span>
+                </div>
+
+                <p class="text-slate-600 text-sm italic">
+                    Lulus dengan baik dan memiliki dasar pemahaman sosial, ekonomi, dan analisis data sederhana.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- Technical Skills Section Start -->
+<section class="max-w-3xl mx-auto py-12 px-4 mt-8">
+
+  <div class="mb-12">
+    <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
+      KEAHLIAN TEKNIS
+    </h2>
+    <div class="h-1.5 w-20 bg-gradient-to-r from-[#00b9e8] to-[#f72585] rounded-full mt-3"></div>
+  </div>
+
+  <!-- Skills Logo Grid -->
+  <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6">
+
+    <!-- HTML -->
+    <div class="bg-white p-4 rounded-2xl border border-slate-100 flex flex-col items-center hover:shadow-md transition">
+      <img src="https://cdn.simpleicons.org/html5/f72585" class="w-10 h-10" />
+      <span class="mt-2 text-xs font-semibold text-slate-600">HTML</span>
+    </div>
+
+    <!-- CSS (SVG FIX) -->
+    <div class="bg-white p-4 rounded-2xl border border-slate-100 flex flex-col items-center hover:shadow-md transition">
+      <svg viewBox="0 0 24 24" class="w-10 h-10">
+        <path fill="#00b9e8" d="M1.5 0h21l-1.91 21.6L12 24l-8.59-2.4L1.5 0zm16.97 4.5H5.03l.32 3.6h12.3l-.43 4.8H8.37l.32 3.6h7.65L15.7 19.2 12 20.4l-3.7-1.2-.24-2.7H5.38l.36 4.1L12 22.8l6.26-2.2.71-8H6.06l-.32-3.6h13.06l.27-3.6z"/>
+      </svg>
+      <span class="mt-2 text-xs font-semibold text-slate-600">CSS</span>
+    </div>
+
+    <!-- JavaScript -->
+    <div class="bg-white p-4 rounded-2xl border border-slate-100 flex flex-col items-center hover:shadow-md transition">
+      <img src="https://cdn.simpleicons.org/javascript/f72585" class="w-10 h-10" />
+      <span class="mt-2 text-xs font-semibold text-slate-600">JavaScript</span>
+    </div>
+
+    <!-- PHP -->
+    <div class="bg-white p-4 rounded-2xl border border-slate-100 flex flex-col items-center hover:shadow-md transition">
+      <img src="https://cdn.simpleicons.org/php/00b9e8" class="w-10 h-10" />
+      <span class="mt-2 text-xs font-semibold text-slate-600">PHP</span>
+    </div>
+
+    <!-- Python -->
+    <div class="bg-white p-4 rounded-2xl border border-slate-100 flex flex-col items-center hover:shadow-md transition">
+      <img src="https://cdn.simpleicons.org/python/00b9e8" class="w-10 h-10" />
+      <span class="mt-2 text-xs font-semibold text-slate-600">Python</span>
+    </div>
+
+    <!-- SQL -->
+    <div class="bg-white p-4 rounded-2xl border border-slate-100 flex flex-col items-center hover:shadow-md transition">
+      <img src="https://cdn.simpleicons.org/mysql/f72585" class="w-10 h-10" />
+      <span class="mt-2 text-xs font-semibold text-slate-600">SQL</span>
+    </div>
+
+    <!-- Tailwind -->
+    <div class="bg-white p-4 rounded-2xl border border-slate-100 flex flex-col items-center hover:shadow-md transition">
+      <img src="https://cdn.simpleicons.org/tailwindcss/00b9e8" class="w-10 h-10" />
+      <span class="mt-2 text-xs font-semibold text-slate-600">Tailwind</span>
+    </div>
+
+    <!-- Bootstrap -->
+    <div class="bg-white p-4 rounded-2xl border border-slate-100 flex flex-col items-center hover:shadow-md transition">
+      <img src="https://cdn.simpleicons.org/bootstrap/f72585" class="w-10 h-10" />
+      <span class="mt-2 text-xs font-semibold text-slate-600">Bootstrap</span>
+    </div>
+
+    <!-- Laravel -->
+    <div class="bg-white p-4 rounded-2xl border border-slate-100 flex flex-col items-center hover:shadow-md transition">
+      <img src="https://cdn.simpleicons.org/laravel/f72585" class="w-10 h-10" />
+      <span class="mt-2 text-xs font-semibold text-slate-600">Laravel</span>
+    </div>
+
+    <!-- Git -->
+    <div class="bg-white p-4 rounded-2xl border border-slate-100 flex flex-col items-center hover:shadow-md transition">
+      <img src="https://cdn.simpleicons.org/git/00b9e8" class="w-10 h-10" />
+      <span class="mt-2 text-xs font-semibold text-slate-600">Git</span>
+    </div>
+
+    <!-- Figma -->
+    <div class="bg-white p-4 rounded-2xl border border-slate-100 flex flex-col items-center hover:shadow-md transition">
+      <img src="https://cdn.simpleicons.org/figma/f72585" class="w-10 h-10" />
+      <span class="mt-2 text-xs font-semibold text-slate-600">Figma</span>
+    </div>
+
+  </div>
+
+  <!-- Soft Skills -->
+  <div class="mt-14">
+    <h3 class="text-lg font-bold text-slate-900 mb-5">
+      Soft Skills
+    </h3>
+
+    <div class="flex flex-wrap gap-3">
+      <span class="px-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-bold text-slate-700 uppercase">Communication</span>
+      <span class="px-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-bold text-slate-700 uppercase">Teamwork</span>
+      <span class="px-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-bold text-slate-700 uppercase">Problem Solving</span>
+      <span class="px-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-bold text-slate-700 uppercase">Time Management</span>
+      <span class="px-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-bold text-slate-700 uppercase">Adaptability</span>
+    </div>
+  </div>
+
+</section>
+<!-- Technical Skills Section End -->
+
+<section class="max-w-3xl mx-auto py-12 px-4 mt-8">
+
+  <!-- ================= PROJEK ================= -->
+  <div class="mb-12">
+    <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
+      Daftar Projek
+    </h2>
+    <div class="h-1.5 w-20 bg-gradient-to-r from-[#00b9e8] to-[#f72585] rounded-full mt-3"></div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
+
+    <!-- Project 1 -->
+    <div class="group bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+      <div class="aspect-video bg-slate-100 overflow-hidden">
+        <img src="krs.png" alt="Website Portfolio"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+      </div>
+      <div class="p-6">
+        <h3 class="text-lg font-bold text-slate-900">
+          Website KRS JAWA III
+        </h3>
+        <p class="text-sm text-slate-500 mt-2">
+          website sistem infromasi mengenai progam kerja PUPR DIY.
+        </p>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="group bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+      <div class="aspect-video bg-slate-100 overflow-hidden">
+        <img src="cv mandiri putra.png" alt="Aplikasi Manajemen Data"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+      </div>
+      <div class="p-6">
+        <h3 class="text-lg font-bold text-slate-900">
+          Website CV Mandiri Putra
+        </h3>
+        <p class="text-sm text-slate-500 mt-2">
+          Website serta progam CRUD untuk CV Mandiri Putra
+        </p>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="group bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+      <div class="aspect-video bg-slate-100 overflow-hidden">
+        <img src="pembuatan nota.png" alt="Aplikasi Manajemen Data"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+      </div>
+      <div class="p-6">
+        <h3 class="text-lg font-bold text-slate-900">
+          Aplikasi Pembuatan Nota
+        </h3>
+        <p class="text-sm text-slate-500 mt-2">
+          Aplikasi untuk pembuatan nota untuk cv mandiri putra
+        </p>
+      </div>
+    </div>
+
+    <!-- Project 5 -->
+    <div class="group bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+      <div class="aspect-video bg-slate-100 overflow-hidden">
+        <img src="to do list.png" alt="Aplikasi Manajemen Data"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+      </div>
+      <div class="p-6">
+        <h3 class="text-lg font-bold text-slate-900">
+          Aplikasi To Do List
+        </h3>
+        <p class="text-sm text-slate-500 mt-2">
+          Aplikasi untuk membuat daftar tugas
+        </p>
+      </div>
+    </div>
+
+    <!-- Project 6 -->
+    <div class="group bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+      <div class="aspect-video bg-slate-100 overflow-hidden">
+        <img src="Screenshot 2025-12-19 020626.png" alt="Aplikasi Manajemen Data"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+      </div>
+      <div class="p-6">
+        <h3 class="text-lg font-bold text-slate-900">
+          Website destinasi wisata umbul di klaten
+        </h3>
+        <p class="text-sm text-slate-500 mt-2">
+          Website destinasi wisata umbul di klaten
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ================= SERTIFIKAT ================= -->
+  <div class="mb-12">
+    <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
+      Daftar Sertifikat
+    </h2>
+    <div class="h-1.5 w-20 bg-gradient-to-r from-[#00b9e8] to-[#f72585] rounded-full mt-3"></div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+    <!-- Sertifikat 1 -->
+    <div class="group bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+      <div class="aspect-video bg-slate-100 overflow-hidden">
+        <img src="API.png" alt="Sertifikat Web Development"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+      </div>
+      <div class="p-6">
+        <h3 class="text-lg font-bold text-slate-900">
+          Sertifikat API introduction
+        </h3>
+        <p class="text-sm text-slate-500 mt-2">
+          Myskill • 2025
+        </p>
+      </div>
+    </div>
+
+    <!-- Sertifikat 2 -->
+    <div class="group bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+      <div class="aspect-video bg-slate-100 overflow-hidden">
+        <img src="backend.png" alt="Sertifikat Front-End"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+      </div>
+      <div class="p-6">
+        <h3 class="text-lg font-bold text-slate-900">
+          Sertifikat Back-End Developer
+        </h3>
+        <p class="text-sm text-slate-500 mt-2">
+          Myskill • 2025
+        </p>
+      </div>
+    </div>
+
+    <!-- Sertifikat 3 -->
+    <div class="group bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+      <div class="aspect-video bg-slate-100 overflow-hidden">
+        <img src="FO.png" alt="Sertifikat Front-End"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+      </div>
+      <div class="p-6">
+        <h3 class="text-lg font-bold text-slate-900">
+          Sertifikat Front-End Developer
+        </h3>
+        <p class="text-sm text-slate-500 mt-2">
+          Myskill • 2025
+        </p>
+      </div>
+    </div>
+
+    <!-- Sertifikat 4 -->
+    <div class="group bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+      <div class="aspect-video bg-slate-100 overflow-hidden">
+        <img src="ID.png" alt="Sertifikat Front-End"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+      </div>
+      <div class="p-6">
+        <h3 class="text-lg font-bold text-slate-900">
+          Sertifikat Internet Introduction
+        </h3>
+        <p class="text-sm text-slate-500 mt-2">
+          Myskill • 2025
+        </p>
+      </div>
+    </div>
+
+    <!-- Sertifikat 5 -->
+    <div class="group bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+      <div class="aspect-video bg-slate-100 overflow-hidden">
+        <img src="RWD.png" alt="Sertifikat Front-End"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+      </div>
+      <div class="p-6">
+        <h3 class="text-lg font-bold text-slate-900">
+          Sertifikat Responsive Web Design
+        </h3>
+        <p class="text-sm text-slate-500 mt-2">
+          Myskill • 2025
+        </p>
+      </div>
+    </div>
+
+    <!-- Sertifikat 2 -->
+    <div class="group bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+      <div class="aspect-video bg-slate-100 overflow-hidden">
+        <img src="sk.jpg" alt="Sertifikat Front-End"
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+      </div>
+      <div class="p-6">
+        <h3 class="text-lg font-bold text-slate-900">
+          Sertifikat magang
+        </h3>
+        <p class="text-sm text-slate-500 mt-2">
+          PUPR DIY • 2025
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+<!-- Contact Me Section Start -->
+<section class="max-w-3xl mx-auto py-12 px-4 mt-8 text-center">
+    
+    <!-- Header -->
+    <div class="mb-12">
+        <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
+            Hubungi Saya
+        </h2>
+        <div class="h-1.5 w-20 bg-gradient-to-r from-[#00b9e8] to-[#f72585] rounded-full mt-3 mx-auto"></div>
+    </div>
+
+    <!-- Contact Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+
+        <!-- Email -->
+        <a href="mailto:arypurnomo110304@gmail.com"
+           class="flex flex-col items-center p-8 bg-white rounded-3xl border border-slate-100 shadow-sm hover:border-[#00b9e8] hover:shadow-md transition-all group">
+            <div class="w-14 h-14 bg-sky-50 rounded-2xl flex items-center justify-center text-[#00b9e8] group-hover:bg-[#00b9e8] group-hover:text-white transition-colors mb-4">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+            </div>
+            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Email</p>
+            <p class="sr-only">arypurnomo110304@gmail.com</p>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/arriwae?igsh=MWU2cHU2bG4xdWRueg==" target="_blank"
+           class="flex flex-col items-center p-8 bg-white rounded-3xl border border-slate-100 shadow-sm hover:border-[#f72585] hover:shadow-md transition-all group">
+            <div class="w-14 h-14 bg-rose-50 rounded-2xl flex items-center justify-center text-[#f72585] group-hover:bg-[#f72585] group-hover:text-white transition-colors mb-4">
+                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2a3 3 0 013 3v10a3 3 0 01-3 3H7a3 3 0 01-3-3V7a3 3 0 013-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-.9a1.1 1.1 0 100 2.2 1.1 1.1 0 000-2.2z"/>
+                </svg>
+            </div>
+            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Instagram</p>
+            <p class="sr-only">https://www.instagram.com/arriwae?igsh=MWU2cHU2bG4xdWRueg==</p>
+        </a>
+
+        <!-- GitHub -->
+        <a href="https://github.com/arriwaee" target="_blank"
+           class="flex flex-col items-center p-8 bg-white rounded-3xl border border-slate-100 shadow-sm hover:border-[#00b9e8] hover:shadow-md transition-all group">
+            <div class="w-14 h-14 bg-slate-100 rounded-2xl flex items-center justify-center text-slate-700 group-hover:bg-slate-800 group-hover:text-white transition-colors mb-4">
+                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd"
+                          d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483
+                             0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466
+                             -.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832
+                             .092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688
+                             -.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004
+                             1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651
+                             .64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855
+                             0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017
+                             C22 6.484 17.522 2 12 2z"
+                          clip-rule="evenodd"/>
+                </svg>
+            </div>
+            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">GitHub</p>
+            <p class="sr-only">https://github.com/arriwaee</p>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com/in/username" target="_blank"
+           class="flex flex-col items-center p-8 bg-white rounded-3xl border border-slate-100 shadow-sm hover:border-[#0a66c2] hover:shadow-md transition-all group">
+            <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-[#0a66c2] group-hover:bg-[#0a66c2] group-hover:text-white transition-colors mb-4">
+                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.238 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+            </div>
+            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">LinkedIn</p>
+            <p class="sr-only">https://www.linkedin.com/in/ari-purnomo-332ba6337?utm_source=share_via&utm_content=profile&utm_medium=member_android</p>
+        </a>
+
+    </div>
+</section>
+<!-- Contact Me Section End -->
+
+
+<!-- Contact Me Section End -->
+<!-- Footer Section Start -->
+<footer class="max-w-3xl mx-auto pt-16 pb-12 px-4">
+    <div class="border-t border-slate-200 pt-10 flex flex-col items-center">
+
+        <!-- Social Icons -->
+        <div class="flex gap-6 mb-6">
+
+            <!-- Instagram -->
+            <a href="https://instagram.com/username" target="_blank"
+               class="w-11 h-11 rounded-2xl bg-rose-50 flex items-center justify-center text-[#f72585]
+                      hover:bg-[#f72585] hover:text-white transition-all shadow-sm">
+                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2a3 3 0 013 3v10a3 3 0 01-3 3H7a3 3 0 01-3-3V7a3 3 0 013-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-.9a1.1 1.1 0 100 2.2 1.1 1.1 0 000-2.2z"/>
+                </svg>
+                <span class="sr-only">https://www.instagram.com/arriwae?igsh=MWU2cHU2bG4xdWRueg==</span>
+            </a>
+
+            <!-- GitHub -->
+            <a href="https://github.com/username" target="_blank"
+               class="w-11 h-11 rounded-2xl bg-slate-100 flex items-center justify-center text-slate-700
+                      hover:bg-slate-800 hover:text-white transition-all shadow-sm">
+                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd"
+                          d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483
+                             0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466
+                             -.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832
+                             .092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688
+                             -.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004
+                             1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651
+                             .64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855
+                             0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017
+                             C22 6.484 17.522 2 12 2z"
+                          clip-rule="evenodd"/>
+                </svg>
+                <span class="sr-only">https://github.com/arriwaee</span>
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:email@example.com"
+               class="w-11 h-11 rounded-2xl bg-sky-50 flex items-center justify-center text-[#00b9e8]
+                      hover:bg-[#00b9e8] hover:text-white transition-all shadow-sm">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+                <span class="sr-only">arypurnomo110304@gmail.com</span>
+            </a>
+
+        </div>
+
+        <!-- Copyright -->
+        <p class="text-sm text-slate-400">
+            © 2024 <span class="font-semibold text-slate-700">Ari Purnomo</span>. All rights reserved.
+        </p>
+
+        <!-- Credit -->
+        <p class="text-[10px] text-slate-300 mt-2 tracking-widest uppercase">
+            CREATED BY<span class="text-[#f72585]">♥</span> ARRIWAE
+        </p>
+
+    </div>
+</footer>
+<!-- Footer Section End -->
+
+
+    <script src="script.js"></script>
+  </body>
+</html>
